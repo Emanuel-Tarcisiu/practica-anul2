@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Hello there"
+
 select i in "Backup" "Sync" "Cleanup" "Updates" "EXIT"
 do
     case $i in

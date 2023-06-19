@@ -7,8 +7,8 @@ for i in $fisier
 do
     if [[ -f $i ]]
     then
-        echo "ii file"
+        echo "$i ii file"
     else
-        echo "ii dir"
+        echo "$i ii dir"
     fi
 done
