@@ -1,5 +1,8 @@
 # practica-anul2
 #proiectul nr.5
+
+scripturile sunt in branch-ul master
+
 Scripturi/cronjob-uri de administrare pentru o stație linux:
 Configurare back-upuri
 syncronizare între stații (rsync, syncthing)
