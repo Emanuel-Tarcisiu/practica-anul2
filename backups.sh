@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #default face backup la dir user-ului emy
-
+#rsync timeshift
 if [[ ! $1 ]]
 then
     echo "NU ai introdus un director default!"
@@ -47,8 +47,8 @@ check_backup() {
 
     if [[ $ora != $oraAUX ]]
     then
-        #aux=`ls /home/backups|egrep $numeFis`
-        sudo rm $numeFis*
+        aux=`ls /home/backups|egrep $numeFis`
+        sudo rm /home/backups/$aux
 
         file=`ls /home/backups|egrep $numeFis`
         if [[ $file ]]
@@ -63,8 +63,8 @@ check_backup() {
         echo "Backup-ul a fost actualizat!"
     elif [[ $data != $dataAUX ]]
     then
-        #aux=`ls /home/backups|egrep $numeFis`
-        sudo rm $numeFis*
+        aux=`ls /home/backups|egrep $numeFis`
+        sudo rm /home/backups/$aux
 
         file=`ls /home/backups|egrep numeFis`
         if [[ $file ]]
