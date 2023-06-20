@@ -6,9 +6,8 @@ select i in "Backup" "Sync" "Cleanup" "Updates" "EXIT"
 do
     case $i in
     "Backup")
-        ./test.sh
+        ./backups.sh /home/emy
         echo 
-        echo "s-a exe test.sh"
     ;;
     "Sync")
         echo "Sync neimplementat"
