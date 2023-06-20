@@ -11,12 +11,15 @@ do
     ;;
     "Sync")
         echo "Sync neimplementat"
+        echo
     ;;
     "Cleanup")
         echo "Cleanup neimplementat"
+        echo
     ;;
     "Updates")
         echo "Updates neimplementat"
+        echo
     ;;
     "EXIT")
         echo "Programul se va inchide in 3sec"
