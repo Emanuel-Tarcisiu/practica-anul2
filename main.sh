@@ -14,7 +14,7 @@ do
         echo
     ;;
     "Cleanup")
-        echo "Cleanup neimplementat"
+        ./cleanup.sh /home/emy
         echo
     ;;
     "Updates")

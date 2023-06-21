@@ -48,7 +48,7 @@ check_backup() {
     if [[ $ora != $oraAUX ]]
     then
         aux=`ls /home/backups|egrep $numeFis`
-        sudo rm /home/backups/$aux
+        sudo rm -v /home/backups/$aux
 
         file=`ls /home/backups|egrep $numeFis`
         if [[ $file ]]
@@ -64,7 +64,7 @@ check_backup() {
     elif [[ $data != $dataAUX ]]
     then
         aux=`ls /home/backups|egrep $numeFis`
-        sudo rm /home/backups/$aux
+        sudo rm -v /home/backups/$aux
 
         file=`ls /home/backups|egrep numeFis`
         if [[ $file ]]
