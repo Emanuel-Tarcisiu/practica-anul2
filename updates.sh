@@ -11,3 +11,5 @@ apt-get update
 
 echo "Selecteaza daca update-urile vor fi instalate:"
 apt-get upgrade
+
+#mai trebuie sa rezolvi curl pt github

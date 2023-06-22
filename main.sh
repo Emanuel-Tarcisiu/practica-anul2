@@ -10,7 +10,7 @@ do
         echo 
     ;;
     "Sync")
-        echo "Sync neimplementat"
+        ./sync.sh
         echo
     ;;
     "Cleanup")
@@ -18,7 +18,7 @@ do
         echo
     ;;
     "Updates")
-        echo "Updates neimplementat"
+        sudo ./updates.sh
         echo
     ;;
     "EXIT")
