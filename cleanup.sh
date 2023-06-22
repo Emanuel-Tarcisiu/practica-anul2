@@ -19,3 +19,8 @@ else
    sudo rm -rvf /home/temp_files/*
    echo "/home/temp_files a fost golit!"
 fi
+
+
+sudo find /var/log -type f -name "*.log" -ctime +2 -exec rm -v {} \;
+echo
+echo "Au fost sterse fisierele mai vechi de 2 zile din /var/log!"

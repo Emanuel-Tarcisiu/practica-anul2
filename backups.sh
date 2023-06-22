@@ -22,6 +22,7 @@ exec_backup() {
         numeFis=`echo $1|sed "s/.*\///"`
         data=`stat $1|egrep Modify|cut -f2 -d' '`
         ora=`stat $1|egrep Modify|cut -f3 -d' '|cut -f1 -d'.'`
+        
         if [[ -d $1 ]]
         then
             ext=$numeFis"+dir_"$data"_"$ora".tar"
