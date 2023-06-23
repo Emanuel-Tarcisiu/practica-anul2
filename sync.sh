@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#grupul local defaul pt care facem sync e munca
+#grupul local default pt care facem sync e munca
 
 membrii=`cat /etc/group|egrep munca|cut -f4 -d':'`
 
@@ -45,4 +45,4 @@ done
 
 IFS=' '
 
-echo "$cine are cea mai noua vers $cmn"
+#echo "$cine are cea mai noua vers $cmn"
