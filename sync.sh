@@ -45,4 +45,7 @@ done
 
 IFS=' '
 
+
+echo
+echo "Scriptul de sync se inchide!"
 #echo "$cine are cea mai noua vers $cmn"

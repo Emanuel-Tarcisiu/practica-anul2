@@ -12,8 +12,6 @@ if [[ $cond = "y" || $cond = "Y" ]]
 then
    echo "Cautam update-urile disponibile:"
    apt-get update
-
-   echo "Selecteaza daca update-urile vor fi instalate:"
    apt-get upgrade
 fi
 
@@ -35,3 +33,6 @@ else
    echo $download > /home/emy/practica/update_file.txt
    echo "Fisierul update_file.txt a fost creat, iar continutul a fost descarcat!"
 fi
+
+echo
+echo "Scriptul de updates se inchide!"

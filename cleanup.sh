@@ -24,3 +24,6 @@ fi
 sudo find /var/log -type f -name "*.log" -ctime +2 -exec rm -v {} \;
 echo
 echo "Au fost sterse fisierele mai vechi de 2 zile din /var/log!"
+
+echo
+echo "Scriptul de cleanup se inchide!"
