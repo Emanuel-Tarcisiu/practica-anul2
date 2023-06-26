@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+#default face update si upgrade la sistem, plus update la o aplicatie de pe github
+
+
 if [[ $EUID -ne 0 ]]
 then
    echo "Acest script trebuie rulat cu drepturi de root!"
@@ -16,22 +20,26 @@ then
 fi
 
 
-cond=`ls /home/emy/practica|egrep -o "update_file.txt"`
-download=`curl -SL "https://raw.githubusercontent.com/Emanuel-Tarcisiu/practica-anul2/main/UpdateFile"`
+cond=`ls /home/emy/practica|egrep -o "UpdateFile"`
 
 if [[ $cond ]]
 then
-   file_out=`cat /home/emy/practica/update_file.txt`
+   download=`curl -SL "https://raw.githubusercontent.com/Emanuel-Tarcisiu/practica-anul2/main/UpdateFile"`
+   file_out=`cat /home/emy/practica/UpdateFile`
 
-   if [[ $download != $file_out ]]
-   then
-      echo $download > /home/emy/practica/update_file.txt
-      echo "Fisierul update_file.txt a fost actualizat!"
-   fi
+   case "$download" in
+   "$file_out")
+      echo "Fisierul este up to date!"
+   ;;
+   *)
+      rm /home/emy/practica/UpdateFile
+      wget -P /home/emy/practica "https://raw.githubusercontent.com/Emanuel-Tarcisiu/practica-anul2/main/UpdateFile"
+      echo "Fisierul a fost actualizat!"
+   ;;
+   esac
 else
-   touch /home/emy/practica/update_file.txt
-   echo $download > /home/emy/practica/update_file.txt
-   echo "Fisierul update_file.txt a fost creat, iar continutul a fost descarcat!"
+   wget -P /home/emy/practica "https://raw.githubusercontent.com/Emanuel-Tarcisiu/practica-anul2/main/UpdateFile"
+   echo "Fisierul a fost creat, iar continutul a fost descarcat!"
 fi
 
 echo
