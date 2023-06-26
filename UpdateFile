@@ -3,6 +3,12 @@
 using namespace std;
 
 int main(){
-cout<<"Hello there!";
+int x;
+cout<<"Hello there!\nx= ";
+cin>>x;
+if(x%2!=1)
+  cout>>"Nr par!";
+else
+  cout>>"Nr impar!";
 return 0;
 }
