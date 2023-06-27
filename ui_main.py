@@ -34,7 +34,7 @@ options = ["Backup", "Sync", "Cleanup", "Updates", "EXIT"]
 
 
 for option in options:
-    button = tk.Button(window, text=option, width=20, height=2,
+    button = tk.Button(window, text=option, width=20, height=3,
                        command=lambda opt=option: execute_option(opt))
     button.pack(pady=5)
 

@@ -45,7 +45,11 @@ done
 
 IFS=' '
 
+echo "Sync intre statii:"
+read -p "IP destinatie= " ipul
+rsync -avz /home/emy/dir_sync/ cosmin_vasilache@$ipul:/home/cosmin_vasilache/remote_sync
 
+#echo "$cine are cea mai noua vers $cmn"
 echo
 echo "Scriptul de sync se inchide!"
-#echo "$cine are cea mai noua vers $cmn"
+#client ssh pe amandoua
