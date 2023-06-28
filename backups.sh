@@ -38,7 +38,7 @@ exec_backup() {
 check_backup() {
     numeFis=`echo $1|sed "s/.*\///"`
     echo "EXISTA backup pentru $numeFis:"
-    ls -l /home/backups|egrep $numeFis
+    sudo ls -l /home/backups|egrep $numeFis
 
     dataAUX=`stat $1|egrep Modify|cut -f2 -d' '`
     oraAUX=`stat $1|egrep Modify|cut -f3 -d' '|cut -f1 -d'.'`
@@ -95,19 +95,23 @@ fi
 
 while true
 do
-    read -p "Vrei sa faci un backup la un fisier specific?[y/n]:" raspuns
+    read -p "Vrei sa faci un backup la un fisier specific?[y/n]: " raspuns
 
     if [[ $raspuns = "y" || $raspuns = "Y" ]]
     then
         read -p "Calea absoluta a fisierului: " calea
         file=`echo $calea|sed "s/.*\///"`
-        echo $file
         aux=`ls /home/backups|egrep -o "$file"`
         if [[ $file ]]
         then
             check_backup $calea
         else    
             exec_backup $calea
+        fi
+
+        if [[ ! $file ]]
+        then
+            echo "$file NU exista!"
         fi
     elif [[ $raspuns = "n" || $raspuns = "N" ]]
         then
@@ -116,5 +120,41 @@ do
         echo "Input GRESIT!"
     fi
 done
+
+while true
+do
+    read -p "Vrei sa faci restore la ceva? [y/n]: " raspuns
+
+    if [[ $raspuns = "y" || $raspuns = "Y" ]]
+    then 
+        echo
+        sudo ls /home/backups
+
+        read -p "Ce fisier= " fis
+        if [[ ! $fis ]]
+        then
+            echo "NU ai introdus un fisier!"
+        else
+            read -p "Unde sa fie salvat= " calea
+            if [[ ! $calea ]]
+            then
+                echo "NU ai introdus o cale pentru restore!"
+            else
+                arh=`sudo ls /home/backups | egrep $fis`
+                tar -xf /home/backups/$arh -C $calea
+                mv $calea/home/emy/* $calea
+                rm -r $calea/home
+            fi
+        fi
+
+    elif [[ $raspuns = "n" || $raspuns = "N" ]]
+    then
+        break
+    else
+        echo "Input gresit!"
+    fi
+
+done
+
 
 echo "Scritp-ul de backup se inchide!"
