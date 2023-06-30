@@ -25,9 +25,9 @@ def execute_option(option):
         return
 
     if result == 0:
-        messagebox.showinfo("Script Result", f"{option} script finished successfully!")
+        messagebox.showinfo("Script Result", f"{option} incheiat cu succes!")
     else:
-        messagebox.showerror("Script Result", f"{option} script encountered an error!")
+        messagebox.showerror("Script Result", f"{option} a intampinat erori!")
 
 def get_password():
     password = simpledialog.askstring("Password", "Enter your password:", show="*")
