@@ -10,5 +10,6 @@ if(x%2!=1)
   cout>>"Nr par!";
 else
   cout>>"Nr impar!";
+cout<<holle;
 return 0;
 }
