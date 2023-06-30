@@ -30,7 +30,7 @@ def execute_option(option):
         messagebox.showerror("Script Result", f"{option} a intampinat erori!")
 
 def get_password():
-    password = simpledialog.askstring("Password", "Enter your password:", show="*")
+    password = simpledialog.askstring("Password", "Introdu parola pentru root:", show="*")
     return password
 
 window = tk.Tk()
